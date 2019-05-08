@@ -58,4 +58,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return loadFragment(fragment);
     }
+
+    public void launchPopup(View view){
+        new ExitDialog().show(getSupportFragmentManager(),"Exit");
+    }
 }
