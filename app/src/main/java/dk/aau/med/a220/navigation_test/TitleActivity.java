@@ -50,11 +50,16 @@ public class TitleActivity extends AppCompatActivity{
 
             case 1:
                 // TODO: load SettingsFragment
-                mButton.setText("BEGIN");
                 fragmentNumber++;
                 break;
 
             case 2:
+                loadFragment(new TeamFragment());
+                mButton.setText("BEGIN");
+                fragmentNumber++;
+                break;
+
+            case 3:
                 // reset fragment counter and launch in to main activity
                 fragmentNumber = 0;
                 Intent intent = new Intent(TitleActivity.this, MainActivity.class);
