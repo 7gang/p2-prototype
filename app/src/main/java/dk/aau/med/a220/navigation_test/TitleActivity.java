@@ -18,16 +18,14 @@ public class TitleActivity extends AppCompatActivity{
         setContentView(R.layout.activity_title);
 
         this.getSupportActionBar().hide();
-
-        loadFragment(new TitleFragment());
-
         mButton = this.findViewById(R.id.title_button);
     }
 
     @Override
     protected void onStart() {
-        // Change the button text back to "NEXT" if a user was to re-enter the TitleActivity
+        // Reset view and button if a user was to re-enter the TitleActivity
         mButton.setText("NEXT");
+        loadFragment(new TitleFragment());
         super.onStart();
     }
 
@@ -36,7 +34,7 @@ public class TitleActivity extends AppCompatActivity{
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container_title, fragment)
-                    .commit();
+                    .commitAllowingStateLoss();
             return true;
         }
         return false;
@@ -46,7 +44,7 @@ public class TitleActivity extends AppCompatActivity{
         switch(fragmentNumber) {
 
             case 0:
-                // TODO: load IntroFragment
+                loadFragment(new IntroFragment());
                 fragmentNumber++;
                 break;
 
@@ -59,11 +57,8 @@ public class TitleActivity extends AppCompatActivity{
             case 2:
                 // reset fragment counter and launch in to main activity
                 fragmentNumber = 0;
-
                 Intent intent = new Intent(TitleActivity.this, MainActivity.class);
                 startActivity(intent);
-
-                //mButton.setText("NEXT");
                 break;
 
         }
