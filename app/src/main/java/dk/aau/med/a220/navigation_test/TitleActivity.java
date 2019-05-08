@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TitleActivity extends AppCompatActivity{
+public class TitleActivity extends AppCompatActivity {
 
     private static int fragmentNumber = 0; // keeping track of what fragment is shown to the user
     Button mButton;
@@ -25,19 +25,18 @@ public class TitleActivity extends AppCompatActivity{
     protected void onStart() {
         // Reset view and button if a user was to re-enter the TitleActivity
         mButton.setText("NEXT");
+        mButton.setVisibility(View.VISIBLE);
         loadFragment(new TitleFragment());
         super.onStart();
     }
 
-    private boolean loadFragment(Fragment fragment) {
+    private void loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container_title, fragment)
                     .commitAllowingStateLoss();
-            return true;
         }
-        return false;
     }
 
     public void nextFragment(View view) {
@@ -50,18 +49,18 @@ public class TitleActivity extends AppCompatActivity{
 
             case 1:
                 // TODO: load SettingsFragment
+                mButton.setText("BEGIN");
                 fragmentNumber++;
                 break;
 
             case 2:
                 loadFragment(new TeamFragment());
-                mButton.setText("BEGIN");
-                fragmentNumber++;
+                mButton.setVisibility(View.INVISIBLE);
+                fragmentNumber = 0;
                 break;
 
             case 3:
                 // reset fragment counter and launch in to main activity
-                fragmentNumber = 0;
                 Intent intent = new Intent(TitleActivity.this, MainActivity.class);
                 startActivity(intent);
                 break;
