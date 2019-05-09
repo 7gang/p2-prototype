@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import dk.aau.med.a220.navigation_test.databinding.FragmentTowerBinding;
 
 public class TowerFragment extends Fragment {
-    FragmentTowerBinding binding;
+    private FragmentTowerBinding binding;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -26,6 +26,14 @@ public class TowerFragment extends Fragment {
         binding.imageView2.setImageBitmap(Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv2)));
         updateBuilding(3);
         return view;
+    }
+
+    public void  setLargeText(String text){
+        binding.textView2.setText(text);
+    }
+
+    public void  setSmallText(String text){
+        binding.textView2.setText(text);
     }
 
     public void updateBuilding(int lv){
