@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".TeamFragment" >
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="409dp"
+        android:layout_height="892dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/citybackground"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-6dp" />
+
     <TextView
         android:id="@+id/textView15"
         android:layout_width="362dp"
@@ -87,8 +96,8 @@
         android:id="@+id/team_1_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="180dp"
         android:text="JOIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -97,8 +106,8 @@
         android:id="@+id/team_2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="300dp"
         android:text="JOIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -107,8 +116,8 @@
         android:id="@+id/team_3_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="440dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="428dp"
         android:text="JOIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -132,4 +141,36 @@
         android:text="Kira, Louise, Steffan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="51dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="428dp"
+        android:src="@drawable/logo1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/team_3_button"
+        app:srcCompat="@drawable/logo1" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="51dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="300dp"
+        android:src="@drawable/logo2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/team_2_button" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="51dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="176dp"
+        android:src="@drawable/logo3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/team_1_button" />
+
 </android.support.constraint.ConstraintLayout>

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/city2" />
 
     <TextView
         android:id="@+id/textView2"
@@ -9,8 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="389dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="386dp"
         android:text="Group 2"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -20,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="31dp"
+        android:layout_marginEnd="95dp"
         android:layout_marginBottom="338dp"
         android:text="Pop: 132"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
@@ -31,8 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="138dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="143dp"
         android:text="Pop: 155"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -42,7 +50,7 @@
         android:layout_height="167dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="178dp"
+        android:layout_marginEnd="187dp"
         android:layout_marginBottom="508dp"
         app:srcCompat="@drawable/tow2" />
 
@@ -52,8 +60,9 @@
         android:layout_height="167dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="178dp"
-        android:layout_marginBottom="284dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="303dp"
+        android:scaleType="centerInside"
         app:srcCompat="@drawable/tow1" />
 
     <ImageView
@@ -63,7 +72,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="179dp"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="106dp"
         app:srcCompat="@drawable/tow3" />
 
     <TextView
@@ -72,8 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="544dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="540dp"
         android:text="Pop: 120"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -83,8 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="185dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="181dp"
         android:text="Group 3*"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
@@ -94,8 +103,39 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="596dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="588dp"
         android:text="Group 1"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="71dp"
+        android:layout_height="69dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="555dp"
+        app:srcCompat="@drawable/logo1" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="71dp"
+        android:layout_height="69dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="355dp"
+        app:srcCompat="@drawable/logo2" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="71dp"
+        android:layout_height="69dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="147dp"
+        app:srcCompat="@drawable/logo3" />
+
 </RelativeLayout>
