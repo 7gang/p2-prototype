@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,8 +8,22 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/introtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="IntroFragment" />
+        android:layout_gravity="center"
+        android:maxWidth="150pt"
+        android:background="@drawable/textview_border"
+        android:padding="8dp"
+        android:text="This application aims to reduce the time you spend sitting. This is done with group-based competition. Rise to new heights with you friends and coworkers in High Rise."
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="182dp"
+        android:src="@drawable/high_rise" />
+
 </FrameLayout>
