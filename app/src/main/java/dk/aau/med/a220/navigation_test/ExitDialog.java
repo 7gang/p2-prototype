@@ -1,6 +1,5 @@
 package dk.aau.med.a220.navigation_test;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -17,6 +16,7 @@ public class ExitDialog extends DialogFragment {
                     public void onClick(DialogInterface dialog, int id) {
                         getActivity().finish();
                         getActivity().moveTaskToBack(true);
+                        Game.stop(); // stop the game
                         System.exit(0);
                     }
                 })
