@@ -1,5 +1,6 @@
 package dk.aau.med.a220.navigation_test;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -11,10 +12,12 @@ public class ExitDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Are you sure you want to exit?(You will no longer be receiving points)")
+        builder.setMessage("Are you sure you want to exit? (You will no longer be receiving points)")
                 .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //code to be implemented
+                        getActivity().finish();
+                        getActivity().moveTaskToBack(true);
+                        System.exit(0);
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
