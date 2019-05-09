@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+        NEVER USED
+                        -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="settings"
+        android:background="?android:attr/windowBackground"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_exit"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="exit"
+        android:background="?android:attr/windowBackground"
+        app:showAsAction="ifRoom" />
+
+</menu>
