@@ -7,7 +7,9 @@
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="676dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="55dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/city2" />
 
