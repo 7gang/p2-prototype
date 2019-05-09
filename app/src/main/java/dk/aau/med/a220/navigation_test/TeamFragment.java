@@ -30,15 +30,15 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
         switch(v.getId()) {
 
             case R.id.team_1_button:
-                // TODO: save choice
+                Game.teamNumber = 1;
                 break;
 
             case R.id.team_2_button:
-                // TODO: save choice
+                Game.teamNumber = 2;
                 break;
 
             case R.id.team_3_button:
-                // TODO: save choice
+                Game.teamNumber = 3;
                 break;
 
             default:
@@ -46,7 +46,7 @@ public class TeamFragment extends Fragment implements View.OnClickListener {
                 return;
 
         }
-        Intent intent = new Intent(/*v.getContext()*/getActivity(), MainActivity.class);
+        Intent intent = new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
     }
 }

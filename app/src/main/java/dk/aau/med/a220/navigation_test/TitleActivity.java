@@ -59,11 +59,11 @@ public class TitleActivity extends AppCompatActivity {
                 fragmentNumber = 0;
                 break;
 
-            case 3:
+            /*case 3:
                 // reset fragment counter and launch in to main activity
                 Intent intent = new Intent(TitleActivity.this, MainActivity.class);
                 startActivity(intent);
-                break;
+                break;*/
 
         }
     }
