@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navView.setOnNavigationItemSelectedListener(this);
 
         loadFragment(new TowerFragment());
+        Game.start();
     }
 
     public void launchSettingsActivity(View view) {
