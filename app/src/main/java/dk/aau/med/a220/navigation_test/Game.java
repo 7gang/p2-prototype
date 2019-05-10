@@ -102,7 +102,7 @@ public class Game {
      */
     public static int getUserTeamStanding() {
         Random rng = new Random();
-        if (rng.nextFloat() < 0.9) userTeamStanding = rng.nextInt(2) + 1; // 10% chance that a new number will be rolled, with a 33% chance it will be the same number
+        if (rng.nextFloat() > 0.9) userTeamStanding = rng.nextInt(3) + 1; // 1% chance that a new number will be rolled, with a 33% chance it will be the same number
         return userTeamStanding;
     }
 
