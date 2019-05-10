@@ -44,12 +44,12 @@ public class TitleActivity extends AppCompatActivity {
 
             case 0:
                 loadFragment(new IntroFragment());
-                mButton.setText("BEGIN");
                 fragmentNumber++;
                 break;
 
             case 1:
                 loadFragment(new SettingsFragment());
+                mButton.setText("BEGIN");
                 fragmentNumber++;
                 break;
 
