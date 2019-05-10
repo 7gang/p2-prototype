@@ -14,6 +14,7 @@ public class Game {
 
     private static long timeStamp = 0;
     private static float[] scores = new float[] {0, 0, 0};
+    private static int userTeamStanding = 3;
 
 
     /**
@@ -95,6 +96,16 @@ public class Game {
         return getLevelsString()[teamNumber - 1];
     }
 
+    /**
+     * Retrieves the amount of people standing in the user's team, ranging from one to three, where four is considered the max amount of people in a team.
+     * @return The integer amount of the people standing in the user's team, e.g. "1"
+     */
+    public static int getUserTeamStanding() {
+        Random rng = new Random();
+        if (rng.nextFloat() < 0.9) userTeamStanding = rng.nextInt(2) + 1; // 10% chance that a new number will be rolled, with a 33% chance it will be the same number
+        return userTeamStanding;
+    }
+
     private static void updateScores() {
 
         long deltaTime = System.currentTimeMillis() - timeStamp;
@@ -104,7 +115,7 @@ public class Game {
         Random rng = new Random();
         for (int i = 0; i < scores.length; i++) {
             float diminisher = 1000; // value is for demonstrational purposes
-            if (i == teamNumber - 1) diminisher = diminisher * 5; // have the user's group grows ten times slower than the others
+            if (i == teamNumber - 1) diminisher = diminisher * 5; // the user's group grows ten times slower than the others
             scores[i] += (deltaTime / diminisher) * rng.nextFloat();
         }
         System.out.println("Updated scores: ( " + scores[0] + ", " + scores[1] + ", " + scores[2] + " )!");
