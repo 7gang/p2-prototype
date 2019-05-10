@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="55dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/city2" />
+        app:srcCompat="@drawable/citybackground" />
 
     <TextView
         android:id="@+id/textView2"
@@ -20,10 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="102dp"
-        android:layout_marginBottom="386dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="361dp"
         android:text="Group 2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/textView4"
@@ -31,10 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="95dp"
-        android:layout_marginBottom="338dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="329dp"
         android:text="Pop: 132"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/textView5"
@@ -42,10 +42,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="143dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="329dp"
         android:text="Pop: 155"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -53,8 +53,8 @@
         android:layout_height="167dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="187dp"
-        android:layout_marginBottom="508dp"
+        android:layout_marginEnd="246dp"
+        android:layout_marginBottom="65dp"
         app:srcCompat="@drawable/tow2" />
 
     <ImageView
@@ -63,19 +63,19 @@
         android:layout_height="167dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="182dp"
-        android:layout_marginBottom="303dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="65dp"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/tow1" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="207dp"
+        android:layout_width="206dp"
         android:layout_height="167dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="179dp"
-        android:layout_marginBottom="106dp"
+        android:layout_marginEnd="-24dp"
+        android:layout_marginBottom="65dp"
         app:srcCompat="@drawable/tow3" />
 
     <TextView
@@ -84,10 +84,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="91dp"
-        android:layout_marginBottom="540dp"
+        android:layout_marginEnd="293dp"
+        android:layout_marginBottom="331dp"
         android:text="Pop: 120"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/textView3"
@@ -95,10 +95,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="91dp"
-        android:layout_marginBottom="181dp"
-        android:text="Group 3*"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="362dp"
+        android:text="Group 3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/textView6"
@@ -106,10 +106,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="588dp"
-        android:text="Group 1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:layout_marginEnd="297dp"
+        android:layout_marginBottom="362dp"
+        android:text="/@team1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -117,8 +117,8 @@
         android:layout_height="69dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="555dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="397dp"
         app:srcCompat="@drawable/logo1" />
 
     <ImageView
@@ -127,8 +127,8 @@
         android:layout_height="69dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="355dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginBottom="395dp"
         app:srcCompat="@drawable/logo2" />
 
     <ImageView
@@ -137,8 +137,8 @@
         android:layout_height="69dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="147dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="395dp"
         app:srcCompat="@drawable/logo3" />
 
 </RelativeLayout>

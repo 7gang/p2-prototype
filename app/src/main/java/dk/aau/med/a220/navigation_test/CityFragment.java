@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import java.util.ArrayList;
@@ -23,6 +24,9 @@ public class CityFragment extends Fragment {
     private Bitmap lv2;
     private Bitmap lv3;
     private ImageView[] imageViewsA = new ImageView[3];
+    private String team1 = "Team 1";
+    private String team2 = "Team 2";
+    private String team3 = "Team 3";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,12 +38,28 @@ public class CityFragment extends Fragment {
         imageViewsA[0] = binding.imageView2;
         imageViewsA[1] = binding.imageView;
         imageViewsA[2] = binding.imageView3;
+
+        binding.textView6.setText(team1);
+        binding.textView2.setText(team2);
+        binding.textView3.setText(team3);
+
         return view;
     }
 
     public void onStart() {
-        // update the user's tower level every time the user navigates to this screen
+        // show the selected team in the city overview
         updateBuilding();
+        switch (Game.teamNumber){
+            case 1:
+                binding.textView6.setText("Your team");
+                break;
+            case 2:
+                binding.textView2.setText("Your team");
+                break;
+            case 3:
+                binding.textView3.setText("Your team");
+                break;
+        }
         super.onStart();
     }
 
