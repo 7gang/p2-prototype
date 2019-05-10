@@ -48,6 +48,11 @@ public class TitleActivity extends AppCompatActivity {
                 break;
 
             case 1:
+                loadFragment(new SettingsFragment());
+                fragmentNumber++;
+                break;
+
+            case 2:
                 loadFragment(new TeamFragment());
                 mButton.setVisibility(View.INVISIBLE);
                 fragmentNumber = 0;
