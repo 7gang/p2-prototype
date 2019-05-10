@@ -44,6 +44,7 @@ public class TitleActivity extends AppCompatActivity {
 
             case 0:
                 loadFragment(new IntroFragment());
+                mButton.setText("BEGIN");
                 fragmentNumber++;
                 break;
 
