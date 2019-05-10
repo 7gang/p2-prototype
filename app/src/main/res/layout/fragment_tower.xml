@@ -65,15 +65,23 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="141dp"
+            android:layout_width="398dp"
             android:layout_height="95dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="135dp"
+            android:layout_marginStart="1dp"
             android:layout_marginTop="115dp"
-            android:layout_marginEnd="135dp"
+            android:layout_marginEnd="420dp"
             android:layout_marginBottom="521dp"
+            android:foregroundTint="#003D2828"
+            android:includeFontPadding="false"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
             android:text="Big text"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
             android:textSize="30sp"
             android:translationY="-50dp"
             android:visibility="visible" />
@@ -86,11 +94,30 @@
             android:layout_marginTop="324dp"
             android:layout_marginEnd="104dp"
             android:layout_marginBottom="315dp"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
             android:text="small text"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:translationY="-200dp"
-            android:visibility="visible" />
+            android:visibility="gone" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="89dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="288dp"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/anim"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
     </FrameLayout>
 </layout>

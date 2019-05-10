@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import dk.aau.med.a220.navigation_test.databinding.FragmentTowerBinding;
 
@@ -19,6 +21,8 @@ public class TowerFragment extends Fragment {
    private Bitmap lv1;
    private Bitmap lv2;
    private Bitmap lv3;
+   private ImageView img;
+   private AnimationDrawable frameAnimation;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,6 +34,10 @@ public class TowerFragment extends Fragment {
         lv3 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv3));
         //binding.imageView2.setImageBitmap(Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv2)));
         //updateBuilding(3);
+        img = binding.imageView10;
+        img.setBackgroundResource(R.drawable.anim);
+        frameAnimation = (AnimationDrawable) img.getBackground();
+        frameAnimation.start();
         return view;
     }
 
@@ -37,6 +45,7 @@ public class TowerFragment extends Fragment {
     public void onStart() {
         // update the user's tower level every time the user navigates to this screen
         updateBuilding(Game.getUserTeamLevel());
+        setLargeText("" + Game.getUserTeamStanding() + "/4 TEAM MEMBERS STANDING");
         super.onStart();
     }
 
