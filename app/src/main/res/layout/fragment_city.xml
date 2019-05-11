@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="165dp"
+        android:layout_marginEnd="178dp"
         android:layout_marginBottom="329dp"
         android:text="Pop: 132"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="34dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="329dp"
         android:text="Pop: 155"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="293dp"
+        android:layout_marginEnd="302dp"
         android:layout_marginBottom="331dp"
         android:text="Pop: 120"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -140,6 +140,79 @@
         android:layout_marginEnd="42dp"
         android:layout_marginBottom="395dp"
         app:srcCompat="@drawable/logo3" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="154dp"
+        android:layout_height="54dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-29dp"
+        android:layout_marginBottom="612dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="158dp"
+        android:layout_height="52dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="613dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="158dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="242dp"
+        android:layout_marginBottom="616dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="270dp"
+        android:layout_height="54dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="531dp"
+        android:text="No team has earned a level yet!" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="128dp"
+        android:layout_height="63dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="247dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="128dp"
+        android:layout_height="63dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="247dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="128dp"
+        android:layout_height="63dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="262dp"
+        android:layout_marginBottom="250dp"
+        android:text="TextView" />
 
 </RelativeLayout>
 </layout>

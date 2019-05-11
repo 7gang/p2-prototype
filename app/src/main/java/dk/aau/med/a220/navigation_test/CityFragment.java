@@ -27,6 +27,11 @@ public class CityFragment extends Fragment {
     private String team1 = "Team 1";
     private String team2 = "Team 2";
     private String team3 = "Team 3";
+    private float [] rates = Game.getRates();
+    private float [] scores = Game.getScores();
+    private int [] pointsToNextLevel = Game.getPointsUntilNextLevel();
+    private boolean [] newLevel = Game.hasEarnedNewLevel();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,10 +44,18 @@ public class CityFragment extends Fragment {
         imageViewsA[1] = binding.imageView;
         imageViewsA[2] = binding.imageView3;
 
+        binding.textView.setText("Pop: " + Math.round(scores[0]));
+        binding.textView4.setText("Pop: " + Math.round(scores[1]));
+        binding.textView5.setText("Pop: " + Math.round(scores[2]));
         binding.textView6.setText(team1);
         binding.textView2.setText(team2);
         binding.textView3.setText(team3);
-
+        binding.textView27.setText("Team 1 earns at: " + rates[0]);
+        binding.textView26.setText("Team 2 earns at: " + rates[1]);
+        binding.textView25.setText("Team 3 earns at: " + rates[2]);
+        binding.textView30.setText("Until next level: " + pointsToNextLevel[0]);
+        binding.textView29.setText("Until next level: " + pointsToNextLevel[1]);
+        binding.textView31.setText("Until next level: " + pointsToNextLevel[2]);
         return view;
     }
 
@@ -60,6 +73,13 @@ public class CityFragment extends Fragment {
                 binding.textView3.setText("Your team");
                 break;
         }
+        if (newLevel[0]) binding.textView28.setText("Team 1 has earned a new level!");
+        if (newLevel[1]) binding.textView28.setText("Team 2 has earned a new level!");
+        if (newLevel[2]) binding.textView28.setText("Team 3 has earned a new level!");
+        if (newLevel[0] && newLevel[1]) binding.textView28.setText("Team 1 & 2 have earned a new level!");
+        if (newLevel[0] && newLevel[2]) binding.textView28.setText("Team 1 & 3 have earned a new level!");
+        if (newLevel[1] && newLevel[2]) binding.textView28.setText("Team 2 & 3 have earned a new level!");
+        if (newLevel[0] && newLevel[1] && newLevel[2]) binding.textView28.setText("All teams have earned a new level!");
         super.onStart();
     }
 
