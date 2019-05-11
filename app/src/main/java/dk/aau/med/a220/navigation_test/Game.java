@@ -86,6 +86,7 @@ public class Game {
                 result[i] = "LEVEL TWO";
             else if (scores[i] < LEVEL_THREE_CAP)
                 result[i] = "LEVEL THREE";
+            else result[i] = "LEVEL FOUR";
         }
         return result;
     }
@@ -115,8 +116,9 @@ public class Game {
     public static float[] getRates() {
         updateScores();
         float[] result = new float[3];
-        long hoursSinceGameStarted = (System.currentTimeMillis() - gameStartedTimeStamp) / (60 * 60 * 1000);
-        for (int i = 0; i < scores.length; i++) result[i] = scores[i] / hoursSinceGameStarted;
+        double hoursSinceGameStarted = (System.currentTimeMillis() - gameStartedTimeStamp) / (60.0 * 60.0 * 1000.0);
+        for (int i = 0; i < scores.length; i++) result[i] = (float) (scores[i] / hoursSinceGameStarted);
+        System.out.println("getRates: [" + result[0] + ", " + result[1] + ", " + result[2] + "]");
         return result;
     }
 
@@ -175,14 +177,15 @@ public class Game {
         if (score < LEVEL_ONE_CAP) return 1;
         else if (score < LEVEL_TWO_CAP) return 2;
         else if (score < LEVEL_THREE_CAP) return 3;
-        return 0;
+        else return 4;
     }
 
     private static void updateScores() {
 
         long deltaTime = System.currentTimeMillis() - timeStamp;
-        if (!started && deltaTime > 5000) return; // wait minimum five seconds between score updates
+        if (!started || deltaTime < 5000) return; // wait minimum five seconds between score updates
         timeStamp = System.currentTimeMillis();
+        System.out.println("deltaTime: " + deltaTime);
 
         Random rng = new Random();
         for (int i = 0; i < scores.length; i++) {
