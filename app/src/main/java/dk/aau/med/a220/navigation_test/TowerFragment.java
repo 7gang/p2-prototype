@@ -23,6 +23,11 @@ public class TowerFragment extends Fragment {
    private Bitmap lv3;
    private ImageView img;
    private AnimationDrawable frameAnimation;
+   private int level = Game.getUserTeamLevel();
+   private boolean newLevel = Game.userTeamHasEarnedNewLevel();
+   private int nextLevel = Game.getUserTeamPointsUntilNextLevel();
+   private float score = Game.getUserTeamScores();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,6 +37,10 @@ public class TowerFragment extends Fragment {
         lv1 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv1));
         lv2 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv2));
         lv3 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv3));
+        binding.textView32.setText("Level: " + level + ", Population: " + Math.round(score));
+        if (newLevel) binding.textView33.setText("Your team has earned a new level!");
+        else binding.textView33.setText("Your team needs " + nextLevel + "  points until next level!");
+
         //binding.imageView2.setImageBitmap(Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv2)));
         //updateBuilding(3);
         img = binding.imageView10;
