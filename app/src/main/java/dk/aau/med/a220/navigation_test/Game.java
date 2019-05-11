@@ -13,6 +13,7 @@ public class Game {
     public static boolean started = false;
 
     private static long timeStamp = 0;
+    private static long gameStartedTimeStamp = 0;
     private static float[] scores = new float[] {0, 0, 0};
     private static int userTeamStanding = 3;
 
@@ -22,6 +23,7 @@ public class Game {
      */
     public static void start() {
         timeStamp = System.currentTimeMillis();
+        gameStartedTimeStamp = System.currentTimeMillis();
         started = true;
     }
 
@@ -57,11 +59,8 @@ public class Game {
     public static int[] getLevels() {
         updateScores();
         int[] result = new int[3];
-        for (int i = 0; i < scores.length; i++) {
-            if (scores[i] < LEVEL_ONE_CAP) result[i] = 1;
-            else if (scores[i] < LEVEL_TWO_CAP) result[i] = 2;
-            else if (scores[i] < LEVEL_THREE_CAP) result[i] = 3;
-        }
+        for (int i = 0; i < scores.length; i++)
+            result[i] = getLevel(scores[i]);
         return result;
     }
     /**
@@ -81,9 +80,12 @@ public class Game {
         updateScores();
         String[] result = new String[3];
         for (int i = 0; i < scores.length; i++) {
-            if (scores[i] < LEVEL_ONE_CAP) result[i] = "LEVEL ONE";
-            else if (scores[i] < LEVEL_TWO_CAP) result[i] = "LEVEL TWO";
-            else if (scores[i] < LEVEL_THREE_CAP) result[i] = "LEVEL THREE";
+            if (scores[i] < LEVEL_ONE_CAP)
+                result[i] = "LEVEL ONE";
+            else if (scores[i] < LEVEL_TWO_CAP)
+                result[i] = "LEVEL TWO";
+            else if (scores[i] < LEVEL_THREE_CAP)
+                result[i] = "LEVEL THREE";
         }
         return result;
     }
@@ -98,12 +100,82 @@ public class Game {
 
     /**
      * Retrieves the amount of people standing in the user's team, ranging from one to three, where four is considered the max amount of people in a team.
-     * @return The integer amount of the people standing in the user's team, e.g. "1"
+     * @return The integer amount of the people standing in the user's team, e.g. 1
      */
     public static int getUserTeamStanding() {
         Random rng = new Random();
         if (rng.nextFloat() > 0.9) userTeamStanding = rng.nextInt(3) + 1; // 1% chance that a new number will be rolled, with a 33% chance it will be the same number
         return userTeamStanding;
+    }
+
+    /**
+     * Retrieves the points earned pr hour, to be used as "points earned the last hour"
+     * @return A list of rates as floating-point numbers, e.g. 33.333...
+     */
+    public static float[] getRates() {
+        updateScores();
+        float[] result = new float[3];
+        long hoursSinceGameStarted = (System.currentTimeMillis() - gameStartedTimeStamp) / (60 * 60 * 1000);
+        for (int i = 0; i < scores.length; i++) result[i] = scores[i] / hoursSinceGameStarted;
+        return result;
+    }
+
+    /**
+     * Retrieves the points earned pr hour of the user's team, to be used as "points earned the last hour"
+     * @return A floating-point number, e.g. 33.333...
+     */
+    public static float getUserTeamRate() {
+        return getRates()[teamNumber - 1];
+    }
+
+    /**
+     * Retrieves a list of the required to level up for each team
+     * @return A list of integers, e.g. [23, 6, 195]
+     */
+    public static int[] getPointsUntilNextLevel() {
+        updateScores();
+        int[] result = new int[3];
+        for (int i = 0; i < scores.length; i++) {
+            if (scores[i] < LEVEL_ONE_CAP) result[i] = Math.round(LEVEL_ONE_CAP - scores[i]);
+            else if (scores[i] < LEVEL_TWO_CAP) result[i] = Math.round(LEVEL_TWO_CAP - scores[i]);
+            else if (scores[i] < LEVEL_THREE_CAP) result[i] = Math.round(LEVEL_THREE_CAP - scores[i]);
+            else result[i] = 0;
+        }
+        return result;
+    }
+
+    /**
+     * Retrieves the points required for the user's team to level up
+     * @return An integer, e.g. 25
+     */
+    public static int getUserTeamPointsUntilNextLevel() {
+        return getPointsUntilNextLevel()[teamNumber - 1];
+    }
+
+    /**
+     * Retrieves a list containing whether or not each team has earned a new level in the last hour (estimate)
+     * @return A list of boolean values, e.g. [true, false, true]
+     */
+    public static boolean[] hasEarnedNewLevel() {
+        boolean[] result = new boolean[3];
+        for (int i = 0; i < scores.length; i++) result[i] = getLevel(getScores()[i] - getRates()[i]) != getLevels()[i];
+        return result;
+    }
+
+    /**
+     * Retrieves whether or not the user's team has earned a new level in the last hour (estimate)
+     * @return A boolean value, e.g. "false"
+     */
+    public static boolean userTeamHasEarnedNewLevel() {
+        return hasEarnedNewLevel()[teamNumber - 1];
+    }
+
+    private static int getLevel(float score) {
+        updateScores();
+        if (score < LEVEL_ONE_CAP) return 1;
+        else if (score < LEVEL_TWO_CAP) return 2;
+        else if (score < LEVEL_THREE_CAP) return 3;
+        return 0;
     }
 
     private static void updateScores() {
