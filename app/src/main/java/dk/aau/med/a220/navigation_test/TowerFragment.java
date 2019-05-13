@@ -26,12 +26,14 @@ public class TowerFragment extends Fragment {
    private int nextLevel = Game.getUserTeamPointsUntilNextLevel();
    private float score = Game.getUserTeamScores();
    private Bitmap[] bitmaps = new Bitmap[5];
+   private Bitmap[] logo = new Bitmap[1];
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_tower,container,false);
         View view = binding.getRoot();
+
         switch (Game.teamNumber) {
             case 2:
             bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b1));
@@ -39,6 +41,7 @@ public class TowerFragment extends Fragment {
             bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b3));
             bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b4));
             bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b5));
+            logo[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.logo2));
             break;
             case 1:
             bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r1));
@@ -46,6 +49,7 @@ public class TowerFragment extends Fragment {
             bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r3));
             bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r4));
             bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r5));
+            logo[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.logo1));
             break;
             case 3:
             bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g1));
@@ -53,6 +57,7 @@ public class TowerFragment extends Fragment {
             bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g3));
             bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g4));
             bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g5));
+            logo[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.logo3));
             break;
         }
         binding.textView32.setText("Level: " + level + ", Population: " + Math.round(score));
@@ -65,6 +70,7 @@ public class TowerFragment extends Fragment {
         img.setBackgroundResource(R.drawable.anim);
         frameAnimation = (AnimationDrawable) img.getBackground();
         frameAnimation.start();
+        binding.imageView11.setImageBitmap(logo[0]);
         return view;
     }
 
