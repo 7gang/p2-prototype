@@ -18,25 +18,43 @@ import dk.aau.med.a220.navigation_test.databinding.FragmentTowerBinding;
 
 public class TowerFragment extends Fragment {
    private FragmentTowerBinding binding;
-   private Bitmap lv1;
-   private Bitmap lv2;
-   private Bitmap lv3;
+   //private Bitmap blv1, blv2, blv3, blv4, blv5,rlv1, rlv2, rlv3, rlv4, rlv5, glv1, glv2, glv3, glv4, glv5;
    private ImageView img;
    private AnimationDrawable frameAnimation;
    private int level = Game.getUserTeamLevel();
    private boolean newLevel = Game.userTeamHasEarnedNewLevel();
    private int nextLevel = Game.getUserTeamPointsUntilNextLevel();
    private float score = Game.getUserTeamScores();
+   private Bitmap[] bitmaps = new Bitmap[5];
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_tower,container,false);
         View view = binding.getRoot();
-
-        lv1 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv1));
-        lv2 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv2));
-        lv3 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv3));
+        switch (Game.teamNumber) {
+            case 2:
+            bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b1));
+            bitmaps[1] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b2));
+            bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b3));
+            bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b4));
+            bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b5));
+            break;
+            case 1:
+            bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r1));
+            bitmaps[1] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r2));
+            bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r3));
+            bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r4));
+            bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r5));
+            break;
+            case 3:
+            bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g1));
+            bitmaps[1] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g2));
+            bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g3));
+            bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g4));
+            bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g5));
+            break;
+        }
         binding.textView32.setText("Level: " + level + ", Population: " + Math.round(score));
         if (newLevel) binding.textView33.setText("Your team has earned a new level!");
         else binding.textView33.setText("Your team needs " + nextLevel + "  points until next level!");
@@ -69,13 +87,19 @@ public class TowerFragment extends Fragment {
     public void updateBuilding(int lv){
         switch (lv){
             case 1:
-                binding.imageView2.setImageBitmap(lv1);
+                binding.imageView2.setImageBitmap(bitmaps[0]);
                 break;
             case 2:
-                binding.imageView2.setImageBitmap(lv2);
+                binding.imageView2.setImageBitmap(bitmaps[1]);
                 break;
             case 3:
-                binding.imageView2.setImageBitmap(lv3);
+                binding.imageView2.setImageBitmap(bitmaps[2]);
+                break;
+            case 4:
+                binding.imageView2.setImageBitmap(bitmaps[3]);
+                break;
+            case 5:
+                binding.imageView2.setImageBitmap(bitmaps[4]);
                 break;
         }
     }
