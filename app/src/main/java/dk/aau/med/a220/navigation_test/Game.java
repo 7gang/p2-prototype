@@ -179,7 +179,6 @@ class Game {
     }
 
     private static int getLevel(float score) {
-        updateScores();
         if (score < LEVEL_ONE_CAP) return 1;
         else if (score < LEVEL_TWO_CAP) return 2;
         else if (score < LEVEL_THREE_CAP) return 3;
