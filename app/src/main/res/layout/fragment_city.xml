@@ -160,8 +160,8 @@
             android:layout_height="54dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="-29dp"
-            android:layout_marginBottom="612dp"
+            android:layout_marginEnd="-27dp"
+            android:layout_marginBottom="559dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -171,8 +171,8 @@
             android:layout_height="52dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="103dp"
-            android:layout_marginBottom="613dp"
+            android:layout_marginEnd="112dp"
+            android:layout_marginBottom="562dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -183,7 +183,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="242dp"
-            android:layout_marginBottom="616dp"
+            android:layout_marginBottom="565dp"
             android:text="TextView"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -230,6 +230,27 @@
             android:layout_marginEnd="262dp"
             android:layout_marginBottom="250dp"
             android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="193dp"
+            android:layout_height="65dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="101dp"
+            android:layout_marginBottom="580dp"
+            android:text="Population gained per hour:" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="57dp"
+            android:layout_marginBottom="532dp"
+            android:text="Stand up to earn more points!"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     </RelativeLayout>
 </layout>
