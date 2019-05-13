@@ -20,9 +20,7 @@ import dk.aau.med.a220.navigation_test.databinding.FragmentCityBinding;
 
 public class CityFragment extends Fragment {
     private FragmentCityBinding binding;
-    private Bitmap lv1;
-    private Bitmap lv2;
-    private Bitmap lv3;
+    private Bitmap[] bitmaps = new Bitmap[5];
     private ImageView[] imageViewsA = new ImageView[3];
     private String team1 = "Team 1";
     private String team2 = "Team 2";
@@ -37,9 +35,7 @@ public class CityFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_city,container,false);
         View view = binding.getRoot();
-        lv1 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv1));
-        lv2 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv2));
-        lv3 = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.buildinglv3));
+
         imageViewsA[0] = binding.imageView2;
         imageViewsA[1] = binding.imageView;
         imageViewsA[2] = binding.imageView3;
@@ -85,16 +81,48 @@ public class CityFragment extends Fragment {
 
     public void updateBuilding(){
         for(int i =0 ;i<=2;i++){
+            getColor(i);
             switch (Game.getLevels()[i]){
                 case 1:
-                    imageViewsA[i].setImageBitmap(lv1);
+                    imageViewsA[i].setImageBitmap(bitmaps[0]);
                     break;
                 case 2:
-                    imageViewsA[i].setImageBitmap(lv2);
+                    imageViewsA[i].setImageBitmap(bitmaps[1]);
                     break;
                 case 3:
-                    imageViewsA[i].setImageBitmap(lv3);
+                    imageViewsA[i].setImageBitmap(bitmaps[2]);
+                    break;
+                case 4:
+                    imageViewsA[i].setImageBitmap(bitmaps[3]);
+                    break;
+                case 5:
+                    imageViewsA[i].setImageBitmap(bitmaps[4]);
                     break;
             }}
+    }
+    void getColor(int input){
+        switch (input) {
+            case 1:
+                bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b1));
+                bitmaps[1] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b2));
+                bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b3));
+                bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b4));
+                bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.b5));
+                break;
+            case 0:
+                bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r1));
+                bitmaps[1] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r2));
+                bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r3));
+                bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r4));
+                bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.r5));
+                break;
+            case 2:
+                bitmaps[0] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g1));
+                bitmaps[1] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g2));
+                bitmaps[2] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g3));
+                bitmaps[3] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g4));
+                bitmaps[4] = Bitmap.createBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.g5));
+                break;
+        }
     }
 }
