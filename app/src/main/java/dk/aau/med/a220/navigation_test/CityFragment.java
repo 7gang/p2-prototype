@@ -46,9 +46,9 @@ public class CityFragment extends Fragment {
         binding.textView6.setText(team1);
         binding.textView2.setText(team2);
         binding.textView3.setText(team3);
-        binding.textView27.setText("Team 1 earns at: " + rates[0]);
-        binding.textView26.setText("Team 2 earns at: " + rates[1]);
-        binding.textView25.setText("Team 3 earns at: " + rates[2]);
+        binding.textView27.setText("Team 1: " + Math.round(rates[0]));
+        binding.textView26.setText("Team 2: " + Math.round(rates[1]));
+        binding.textView25.setText("Team 3: " + Math.round(rates[2]));
         binding.textView30.setText("Until next level: " + pointsToNextLevel[0]);
         binding.textView29.setText("Until next level: " + pointsToNextLevel[1]);
         binding.textView31.setText("Until next level: " + pointsToNextLevel[2]);
