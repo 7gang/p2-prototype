@@ -1,6 +1,5 @@
 package dk.aau.med.a220.navigation_test;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,12 +57,6 @@ public class TitleActivity extends AppCompatActivity {
                 mButton.setVisibility(View.INVISIBLE);
                 fragmentNumber = 0;
                 break;
-
-            /*case 3:
-                // reset fragment counter and launch in to main activity
-                Intent intent = new Intent(TitleActivity.this, MainActivity.class);
-                startActivity(intent);
-                break;*/
 
         }
     }
